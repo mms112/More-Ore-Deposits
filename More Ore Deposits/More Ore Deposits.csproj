@@ -1,33 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="../Environment.props" />
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(SolutionDir)\valheim.targets" />
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <OutputType>Library</OutputType>
-    <RootNamespace>MoreOreDeposits</RootNamespace>
-    <AssemblyName>More Ore Deposits</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <LangVersion>10</LangVersion>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="Jotunn">
+      <HintPath>$(SolutionDir)\Plugins\Jotunn\Jotunn.dll</HintPath>
+    </Reference>
   </ItemGroup>
-
   <ItemGroup>
-    <EmbeddedResource Include="assets/gold_bundle" />
-    <EmbeddedResource Include="assets/blackmetal_bundle" />
-    <EmbeddedResource Include="assets/iron_bundle" />
-    <EmbeddedResource Include="assets/silver_bundle" />
-    <EmbeddedResource Include="assets/coal_bundle" />
-    <EmbeddedResource Include="assets/translations_bundle" />
+    <EmbeddedResource Include="assets\gold_bundle" />
+    <EmbeddedResource Include="assets\blackmetal_bundle" />
+    <EmbeddedResource Include="assets\iron_bundle" />
+    <EmbeddedResource Include="assets\silver_bundle" />
+    <EmbeddedResource Include="assets\coal_bundle" />
+    <EmbeddedResource Include="assets\translations_bundle" />
   </ItemGroup>
-
-  <Target Name="PublishOnWindows" AfterTargets="Build" Condition="'$(OS)' == 'Windows_NT'">
-    <Exec Command="powershell.exe -ExecutionPolicy RemoteSigned -File &quot;$(SolutionDir)publish.ps1&quot; -Target &quot;$(Configuration)&quot; -TargetPath &quot;$(TargetDir.TrimEnd('\'))&quot; -TargetAssembly &quot;$(TargetFileName)&quot; -ValheimPath &quot;$(VALHEIM_INSTALL.TrimEnd('\'))&quot; -DeployPath &quot;$(BEPINEX_PLUGINS.TrimEnd('\'))&quot; -ProjectPath &quot;$(ProjectDir.TrimEnd('\'))&quot;" />
-  </Target>
-
+  <ItemGroup>
+    <Content Include="Package\icon.png" />
+    <Content Include="Translations\German\More Ore Deposits.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
