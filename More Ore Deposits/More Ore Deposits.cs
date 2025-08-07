@@ -303,7 +303,7 @@ namespace MoreOreDeposits
             Biome = Heightmap.Biome.BlackForest,
             BlockCheck = true,
             Min = 0,
-            Max = 2,
+            Max = 0.25f,
             GroundOffset = -1.3f,
             ScaleMin = 295,
             ScaleMax = 296,
@@ -317,7 +317,7 @@ namespace MoreOreDeposits
             Biome = Heightmap.Biome.BlackForest,
             BlockCheck = true,
             Min = 0,
-            Max = 0.65f,
+            Max = 0.15f,
             GroundOffset = -0.3f,
             ScaleMin = 295,
             ScaleMax = 296,
@@ -342,14 +342,14 @@ namespace MoreOreDeposits
         // Define the vegetation configuration (vanilla iron ore)
         VegetationConfig ironDepositVanillaConfig = new VegetationConfig
         {
-            Biome = (Heightmap.Biome.Mountain | Heightmap.Biome.Plains),
+            Biome = Heightmap.Biome.Mountain | Heightmap.Biome.Plains,
             BlockCheck = true,
             Min = 0,
-            Max = 0.33f,
+            Max = 0.05f,
             GroundOffset = -1f,
             ScaleMin = 295,
             ScaleMax = 296,
-            MinAltitude = 0f,
+            MaxAltitude = 120f,
 
         };
 
@@ -359,7 +359,7 @@ namespace MoreOreDeposits
             Biome = Heightmap.Biome.Mountain,
             BlockCheck = true,
             Min = 0,
-            Max = 1,
+            Max = 0.25f,
             GroundOffset = -1.3f,
             ScaleMin = 295,
             ScaleMax = 296,
@@ -373,7 +373,7 @@ namespace MoreOreDeposits
             Biome = Heightmap.Biome.Plains,
             BlockCheck = true,
             Min = 0,
-            Max = 2,
+            Max = 0.25f,
             GroundOffset = -1.3f,
             ScaleMin = 295,
             ScaleMax = 296,
@@ -387,7 +387,7 @@ namespace MoreOreDeposits
             Biome = Heightmap.Biome.Plains,
             BlockCheck = true,
             Min = 0,
-            Max = 0.65f,
+            Max = 0.15f,
             GroundOffset = -0.3f,
             ScaleMin = 295,
             ScaleMax = 296,
@@ -398,7 +398,7 @@ namespace MoreOreDeposits
         // Define the vegetation configuration
         VegetationConfig coalDepositConfig = new VegetationConfig
         {
-            Biome = (Heightmap.Biome.Swamp | Heightmap.Biome.BlackForest),
+            Biome = Heightmap.Biome.Swamp | Heightmap.Biome.BlackForest,
             BlockCheck = true,
             Min = 0,
             Max = 2,
