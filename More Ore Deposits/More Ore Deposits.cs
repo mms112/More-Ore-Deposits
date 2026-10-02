@@ -349,6 +349,7 @@ namespace MoreOreDeposits
             GroundOffset = -1f,
             ScaleMin = 295,
             ScaleMax = 296,
+            MinAltitude = 0f,
             MaxAltitude = 120f,
 
         };
